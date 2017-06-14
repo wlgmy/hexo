@@ -69,4 +69,6 @@ theme: Yelee
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repository: https://github.com/wlgmy/wlgmy.github.io.git
+  branch: master
