@@ -12,9 +12,11 @@ fi
 OPT=$1
 case $OPT in
   deploy|Deploy|d|D)
-  echo "deploy"
+  echo "hexo generage"
   hexo g
+  echo "hexo deploy"
   hexo d
+  echo "commit to git"
   git add . && git commit -m"a new deploy"
   ;;
   pull|Pull|p|P)
