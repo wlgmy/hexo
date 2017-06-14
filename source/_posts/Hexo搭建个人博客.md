@@ -56,7 +56,7 @@ hexo init
 
 ## 将博客发布到github
 
-> Gitup创建博客仓库
+> github创建博客仓库
 
 仓库名必须为【${your_user_name}.github.io】，例如你的github用户名叫做zhangsan，那个这个仓库名就叫zhangsan.github.io，建立好仓库之后就是在github上发布个人主页，这里不再细述，具体操作可以百度
 
