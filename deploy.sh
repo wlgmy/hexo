@@ -7,6 +7,7 @@ push()
 {
   echo "commit to git"
   git add . && git commit -m"a new git push"
+  git push
 }
 pullToServer()
 {
