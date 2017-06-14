@@ -25,6 +25,7 @@ case $OPT in
   ;;
   pull|Pull|p|P)
   echo "git pull"
+  cd /usr/share/nginx/hexo
   git pull
   ;;
   *)
