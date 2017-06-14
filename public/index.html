@@ -295,7 +295,7 @@
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><blockquote>
 <p>申请Github账户</p>
 </blockquote>
-<p>  如若想要通过github来作为自己博客的服务器，则必须要有自己的github账户。<br>  如若自己有云服务器和域名，也可以部署至自己的私服，则不需要github账户，建议采用github部署</p>
+<p>  如若想要通过Github来作为自己博客的服务器，则必须要有自己的Github账户。<br>  如若自己有云服务器和域名，也可以部署至自己的私服，则不需要Github账户，建议采用Github部署</p>
 <blockquote>
 <p>安装node</p>
 </blockquote>
@@ -326,26 +326,26 @@
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
 <p>执行该条命令后控制台会输出本地预览地址，默认为：<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a><br>然后你就可以看到你的博客啦</p>
-<h2 id="将博客发布到github"><a href="#将博客发布到github" class="headerlink" title="将博客发布到github"></a>将博客发布到github</h2><blockquote>
-<p>github创建博客仓库</p>
+<h2 id="将博客发布到Github"><a href="#将博客发布到Github" class="headerlink" title="将博客发布到Github"></a>将博客发布到Github</h2><blockquote>
+<p>Github创建博客仓库</p>
 </blockquote>
-<p>仓库名必须为【${your_user_name}.github.io】，例如你的github用户名叫做zhangsan，那个这个仓库名就叫zhangsan.github.io，建立好仓库之后就是在github上发布个人主页，这里不再细述，具体操作可以百度</p>
+<p>仓库名必须为【${your_user_name}.Github.io】，例如你的Github用户名叫做zhangsan，那个这个仓库名就叫zhangsan.Github.io，建立好仓库之后就是在Github上发布个人主页，这里不再细述，具体操作可以百度</p>
 <blockquote>
 <p>生成静态页面</p>
 </blockquote>
 <p>我们之前通过new方法来创建了一个新的博客，但是并么有生成可以直接通过浏览器访问的静态页面文件，所以要通过以下命令来将我们的博客转换成web静态文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure></p>
 <p>执行命令后默认会将生成的静态文件放在public文件夹下</p>
 <blockquote>
-<p>关联发布至github.io</p>
+<p>关联发布至Github.io</p>
 </blockquote>
 <p>首先需要配置_config.yml文件来关联git仓库,任意编译器打开_config.yml找到deploy这里，改成以下配置(注意： 冒号后面要有空格！)<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  respository:</span> <span class="string">$&#123;your</span> <span class="string">git</span> <span class="string">blog</span> <span class="string">web</span> <span class="string">URL&#125;</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>发布至github.io</p>
+<p>发布至Github.io</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
-<p>这样就会将你的public文件夹上传到github.io的仓库里，再打开你的github.io的地址就可以看到你的博客。</p>
+<p>这样就会将你的public文件夹上传到Github.io的仓库里，再打开你的Github.io的地址就可以看到你的博客。</p>
 <h2 id="个性化你的HEXO博客"><a href="#个性化你的HEXO博客" class="headerlink" title="个性化你的HEXO博客"></a>个性化你的HEXO博客</h2><p>HEXO提供很多的主题，可以根据自己的需要来选择相应的主题风格，安装方法也很简单，这里贴上官方文档供大家阅读 <a href="https://hexo.io/themes/" target="_blank" rel="external">hexo | themes</a></p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><h4 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a><a href="https://hexo.io/" target="_blank" rel="external">HEXO</a></h4><h4 id="HEXO-THEMES"><a href="#HEXO-THEMES" class="headerlink" title="HEXO | THEMES"></a><a href="https://hexo.io/themes/" target="_blank" rel="external">HEXO | THEMES</a></h4><h4 id="github"><a href="#github" class="headerlink" title="github"></a><a href="https://github.com/" target="_blank" rel="external">github</a></h4><h4 id="NODE"><a href="#NODE" class="headerlink" title="NODE"></a><a href="http://nodejs.cn/" target="_blank" rel="external">NODE</a></h4><h4 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a><a href="http://www.appinn.com/markdown/basic.html" target="_blank" rel="external">markdown</a></h4>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><h4 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a><a href="https://hexo.io/" target="_blank" rel="external">HEXO</a></h4><h4 id="HEXO-THEMES"><a href="#HEXO-THEMES" class="headerlink" title="HEXO | THEMES"></a><a href="https://hexo.io/themes/" target="_blank" rel="external">HEXO | THEMES</a></h4><h4 id="Github"><a href="#Github" class="headerlink" title="Github"></a><a href="https://github.com/" target="_blank" rel="external">Github</a></h4><h4 id="NODE"><a href="#NODE" class="headerlink" title="NODE"></a><a href="http://nodejs.cn/" target="_blank" rel="external">NODE</a></h4><h4 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a><a href="http://www.appinn.com/markdown/basic.html" target="_blank" rel="external">markdown</a></h4>
       
     </div>
     
