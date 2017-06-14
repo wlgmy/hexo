@@ -30,7 +30,6 @@ case $OPT in
   echo "hexo deploy"
   hexo d
   push
-  echo "deploy to 112.124.11.214"
   pullToServer
   ;;
   pull|Pull|p|P)
