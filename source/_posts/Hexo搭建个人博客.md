@@ -58,7 +58,7 @@ hexo init
 
 > Github创建博客仓库
 
-仓库名必须为【${your_user_name}.Github.io】，例如你的Github用户名叫做zhangsan，那个这个仓库名就叫zhangsan.Github.io，建立好仓库之后就是在Github上发布个人主页，这里不再细述，具体操作可以百度
+仓库名必须为【${your_user_name}.Github.io】，例如你的Github用户名叫做zhangsan，那个这个仓库名就叫zhangsan.Github.io，建立好仓库之后就可以在Github上发布个人主页，这里不再细述，具体操作可以百度
 
 > 生成静态页面
 
