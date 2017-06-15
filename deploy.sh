@@ -12,9 +12,12 @@ push()
 pullToServer()
 {
   echo "pull to server"
-  ssh root@112.124.11.214 'sh /usr/share/nginx/hexo/deploy.sh pull'
   cd /usr/share/nginx/hexo
   git pull
+}
+sshToServer(){
+  echo "ssh to server"
+  ssh root@112.124.11.214 'sh /usr/share/nginx/hexo/deploy.sh pull'
 }
 
 if [ $# -ne 1 ]
@@ -30,7 +33,7 @@ case $OPT in
   echo "hexo deploy"
   hexo d
   push
-  pullToServer
+  sshToServer
   ;;
   pull|Pull|p|P)
   pullToServer
