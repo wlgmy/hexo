@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="本文简单介绍下如何通过HEXO以及Github来搭建个人博客 准备工作 申请Github账户    如若想要通过Github来作为自己博客的服务器，则必须要有自己的Github账户。  如若自己有云服务器和域名，也可以部署至自己的私服，则不需要Github账户，建议采用Github部署  安装node    node为本地开发，编译hexo的工具，安装方法根据所用平台不同可自行百度  安装git">
+<meta name="description" content="概述requestAnimationFrame是浏览器用于定时循环操作，类似于setTimeout的一个接口，只不过setTimeout是用户自定义定时时间，而requestAnimationFrame则是利用浏览器的刷新机制，根据浏览器/显示器的刷新频率（60HZ或者75HZ）来执行定时操作。因此这个方法在做逐帧动画的时候非常适用。 语法 注意:如果您想在下一个重绘时为另一个框架设置动画，您的回">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo搭建个人博客">
-<meta property="og:url" content="http://www.wllyt.site/2017/06/14/Hexo搭建个人博客/index.html">
+<meta property="og:title" content="requestAnimationFrame">
+<meta property="og:url" content="http://www.wllyt.site/2017/06/15/requestAnimationFrame/index.html">
 <meta property="og:site_name" content="Wanglong&#39;s Blog">
-<meta property="og:description" content="本文简单介绍下如何通过HEXO以及Github来搭建个人博客 准备工作 申请Github账户    如若想要通过Github来作为自己博客的服务器，则必须要有自己的Github账户。  如若自己有云服务器和域名，也可以部署至自己的私服，则不需要Github账户，建议采用Github部署  安装node    node为本地开发，编译hexo的工具，安装方法根据所用平台不同可自行百度  安装git">
-<meta property="og:updated_time" content="2017-06-14T08:44:04.000Z">
+<meta property="og:description" content="概述requestAnimationFrame是浏览器用于定时循环操作，类似于setTimeout的一个接口，只不过setTimeout是用户自定义定时时间，而requestAnimationFrame则是利用浏览器的刷新机制，根据浏览器/显示器的刷新频率（60HZ或者75HZ）来执行定时操作。因此这个方法在做逐帧动画的时候非常适用。 语法 注意:如果您想在下一个重绘时为另一个框架设置动画，您的回">
+<meta property="og:updated_time" content="2017-06-15T07:23:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo搭建个人博客">
-<meta name="twitter:description" content="本文简单介绍下如何通过HEXO以及Github来搭建个人博客 准备工作 申请Github账户    如若想要通过Github来作为自己博客的服务器，则必须要有自己的Github账户。  如若自己有云服务器和域名，也可以部署至自己的私服，则不需要Github账户，建议采用Github部署  安装node    node为本地开发，编译hexo的工具，安装方法根据所用平台不同可自行百度  安装git">
+<meta name="twitter:title" content="requestAnimationFrame">
+<meta name="twitter:description" content="概述requestAnimationFrame是浏览器用于定时循环操作，类似于setTimeout的一个接口，只不过setTimeout是用户自定义定时时间，而requestAnimationFrame则是利用浏览器的刷新机制，根据浏览器/显示器的刷新频率（60HZ或者75HZ）来执行定时操作。因此这个方法在做逐帧动画的时候非常适用。 语法 注意:如果您想在下一个重绘时为另一个框架设置动画，您的回">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hexo搭建个人博客 | Wanglong&#39;s Blog</title>
+<title>requestAnimationFrame | Wanglong&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -256,11 +256,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Hexo搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-requestAnimationFrame" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/06/14/Hexo搭建个人博客/" class="article-date">
-      <time datetime="2017-06-14T06:16:46.000Z" itemprop="datePublished">2017-06-14</time>
+      <a href="/2017/06/15/requestAnimationFrame/" class="article-date">
+      <time datetime="2017-06-15T06:33:14.000Z" itemprop="datePublished">2017-06-15</time>
 </a>
 
 
@@ -275,7 +275,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo搭建个人博客
+      requestAnimationFrame
     </h1>
   
 
@@ -292,61 +292,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>本文简单介绍下如何通过HEXO以及Github来搭建个人博客</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><blockquote>
-<p>申请Github账户</p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>requestAnimationFrame是浏览器用于定时循环操作，类似于setTimeout的一个接口，只不过setTimeout是用户自定义定时时间，而requestAnimationFrame则是利用浏览器的刷新机制，根据浏览器/显示器的刷新频率（60HZ或者75HZ）来执行定时操作。因此这个方法在做逐帧动画的时候非常适用。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><blockquote>
+<p>注意:<br>如果您想在下一个重绘时为另一个框架设置动画，您的回调例程必须调用 requestAnimationFrame()。</p>
 </blockquote>
-<p>  如若想要通过Github来作为自己博客的服务器，则必须要有自己的Github账户。<br>  如若自己有云服务器和域名，也可以部署至自己的私服，则不需要Github账户，建议采用Github部署</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">requestID = <span class="built_in">window</span>.requestAnimationFrame(callback);               <span class="comment">// Firefox 23 / IE10 / Chrome / Safari 7 (incl. iOS)</span></div><div class="line">requestID = <span class="built_in">window</span>.mozRequestAnimationFrame(callback);                <span class="comment">// Firefox &lt; 23</span></div><div class="line">requestID = <span class="built_in">window</span>.webkitRequestAnimationFrame(callback); <span class="comment">// Older versions Chrome/Webkit</span></div></pre></td></tr></table></figure>
+<p>目前，主要浏览器(Firefox 23 / IE 10 / Chrome / Safari）都支持这个方法 <a href="https://caniuse.com/#search=requestAnimationFrame" target="_blank" rel="external">点击查看兼容性测试</a>。对于没有实现requestAnimationFrame方法的浏览器，由于requestAnimationFrame和setTimeout一样采用回调的方式,因此可以在没有实现requestAnimationFrame的浏览器中才用setTimeout作为备胎，下面放上一段由Paul Irish及其他贡献者放在GitHub Gist上的代码片段，用以在浏览器不支持requestAnimationFrame的情况下使用setTimeout作为备胎方案<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// http://paulirish.com/2011/requestanimationframe-for-smart-animating/</span></div><div class="line"><span class="comment">// http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating</span></div><div class="line"><span class="comment">// requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel</span></div><div class="line"><span class="comment">// MIT license</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> lastTime = <span class="number">0</span>;</div><div class="line">    <span class="keyword">var</span> vendors = [<span class="string">'ms'</span>, <span class="string">'moz'</span>, <span class="string">'webkit'</span>, <span class="string">'o'</span>];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> x = <span class="number">0</span>; x &lt; vendors.length &amp;&amp; !<span class="built_in">window</span>.requestAnimationFrame; ++x) &#123;</div><div class="line">        <span class="built_in">window</span>.requestAnimationFrame = <span class="built_in">window</span>[vendors[x] + <span class="string">'RequestAnimationFrame'</span>];</div><div class="line">        <span class="built_in">window</span>.cancelAnimationFrame = <span class="built_in">window</span>[vendors[x] + <span class="string">'CancelAnimationFrame'</span>] || <span class="built_in">window</span>[vendors[x] + <span class="string">'CancelRequestAnimationFrame'</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.requestAnimationFrame) <span class="built_in">window</span>.requestAnimationFrame = <span class="function"><span class="keyword">function</span>(<span class="params">callback, element</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> currTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</div><div class="line">        <span class="keyword">var</span> timeToCall = <span class="built_in">Math</span>.max(<span class="number">0</span>, <span class="number">16</span> - (currTime - lastTime));</div><div class="line">        <span class="keyword">var</span> id = <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            callback(currTime + timeToCall);</div><div class="line">        &#125;, timeToCall);</div><div class="line">        lastTime = currTime + timeToCall;</div><div class="line">        <span class="keyword">return</span> id;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.cancelAnimationFrame) <span class="built_in">window</span>.cancelAnimationFrame = <span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">        clearTimeout(id);</div><div class="line">    &#125;;</div><div class="line">&#125;());</div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>安装node</p>
+<p>例子</p>
 </blockquote>
-<p>  node为本地开发，编译hexo的工具，安装方法根据所用平台不同可自行百度</p>
-<blockquote>
-<p>安装git</p>
-</blockquote>
-<p>  代码管理工具，也是将hexo内容提交到Github上的工具</p>
-<h2 id="本地环境搭建"><a href="#本地环境搭建" class="headerlink" title="本地环境搭建"></a>本地环境搭建</h2><blockquote>
-<p>安装HEXO</p>
-</blockquote>
-<p>当安装好node和git后，可执行如下命令安装HEXO：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>初始化</p>
-</blockquote>
-<p>创建自己的博客文件夹，比如hexo，然后到该文件目录下执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
-<p>至此你可以看到在当前目录下生成了hexo相关的文件</p>
-<h2 id="创建你的第一篇博客"><a href="#创建你的第一篇博客" class="headerlink" title="创建你的第一篇博客"></a>创建你的第一篇博客</h2><blockquote>
-<p>新建博客</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">'your_first_blog_name'</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>编写博客内容</p>
-</blockquote>
-<p>在source/_posts/文件目录下回生成一个your_first_blog_name.md文件，任意编辑器打开编辑该文件即可（注：hexo默认采用markdown语法书写，不熟悉语法的同学可以百度<a href="http://www.appinn.com/markdown/basic.html" target="_blank" rel="external">markdown语法</a>）</p>
-<blockquote>
-<p>本地预览</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
-<p>执行该条命令后控制台会输出本地预览地址，默认为：<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a><br>然后你就可以看到你的博客啦</p>
-<h2 id="将博客发布到Github"><a href="#将博客发布到Github" class="headerlink" title="将博客发布到Github"></a>将博客发布到Github</h2><blockquote>
-<p>Github创建博客仓库</p>
-</blockquote>
-<p>仓库名必须为【${your_user_name}.Github.io】，例如你的Github用户名叫做zhangsan，那个这个仓库名就叫zhangsan.Github.io，建立好仓库之后就可以在Github上发布个人主页，这里不再细述，具体操作可以百度</p>
-<blockquote>
-<p>生成静态页面</p>
-</blockquote>
-<p>我们之前通过new方法来创建了一个新的博客，但是并么有生成可以直接通过浏览器访问的静态页面文件，所以要通过以下命令来将我们的博客转换成web静态文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure></p>
-<p>执行命令后默认会将生成的静态文件放在public文件夹下</p>
-<blockquote>
-<p>关联发布至Github.io</p>
-</blockquote>
-<p>首先需要配置_config.yml文件来关联git仓库,任意编译器打开_config.yml找到deploy这里，改成以下配置(注意： 冒号后面要有空格！)<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  respository:</span> <span class="string">$&#123;your</span> <span class="string">git</span> <span class="string">blog</span> <span class="string">web</span> <span class="string">URL&#125;</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>发布至Github.io</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
-<p>这样就会将你的public文件夹上传到Github.io的仓库里，再打开你的Github.io的地址就可以看到你的博客。</p>
-<h2 id="个性化你的HEXO博客"><a href="#个性化你的HEXO博客" class="headerlink" title="个性化你的HEXO博客"></a>个性化你的HEXO博客</h2><p>HEXO提供很多的主题，可以根据自己的需要来选择相应的主题风格，安装方法也很简单，这里贴上官方文档供大家阅读 <a href="https://hexo.io/themes/" target="_blank" rel="external">hexo | themes</a></p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><h4 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a><a href="https://hexo.io/" target="_blank" rel="external">HEXO</a></h4><h4 id="HEXO-THEMES"><a href="#HEXO-THEMES" class="headerlink" title="HEXO | THEMES"></a><a href="https://hexo.io/themes/" target="_blank" rel="external">HEXO | THEMES</a></h4><h4 id="Github"><a href="#Github" class="headerlink" title="Github"></a><a href="https://github.com/" target="_blank" rel="external">Github</a></h4><h4 id="NODE"><a href="#NODE" class="headerlink" title="NODE"></a><a href="http://nodejs.cn/" target="_blank" rel="external">NODE</a></h4><h4 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a><a href="http://www.appinn.com/markdown/basic.html" target="_blank" rel="external">markdown</a></h4>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// useage</span></div><div class="line"><span class="keyword">var</span> start = <span class="literal">null</span>;</div><div class="line"><span class="keyword">var</span> d = <span class="built_in">document</span>.getElementById(<span class="string">'SomeElementYouWantToAnimate'</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">timestamp</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (start === <span class="literal">null</span>) start = timestamp;</div><div class="line">  <span class="keyword">var</span> progress = timestamp - start;</div><div class="line">  d.style.left = <span class="built_in">Math</span>.min(progress/<span class="number">10</span>, <span class="number">200</span>) + <span class="string">"px"</span>;</div><div class="line">  <span class="keyword">if</span> (progress &lt; <span class="number">2000</span>) &#123;</div><div class="line">    requestAnimationFrame(step);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">requestAnimationFrame(step);</div></pre></td></tr></table></figure>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><h4 id="MDN-window-requestAnimationFrame"><a href="#MDN-window-requestAnimationFrame" class="headerlink" title="MDN window.requestAnimationFrame"></a>MDN <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame" target="_blank" rel="external">window.requestAnimationFrame</a></h4><h4 id="Paul-Lrish-requestAnimationFrame-for-Smart-Animating"><a href="#Paul-Lrish-requestAnimationFrame-for-Smart-Animating" class="headerlink" title="Paul Lrish requestAnimationFrame for Smart Animating"></a>Paul Lrish <a href="https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/" target="_blank" rel="external">requestAnimationFrame for Smart Animating</a></h4>
       
     </div>
     
@@ -354,13 +310,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/06/14/Hexo搭建个人博客/">Hexo搭建个人博客</a></p>
+        <p><span>本文标题:</span><a href="/2017/06/15/requestAnimationFrame/">requestAnimationFrame</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Long Wang</a></p>
-        <p><span>发布时间:</span>2017-06-14, 14:16:46</p>
-        <p><span>最后更新:</span>2017-06-14, 16:44:04</p>
+        <p><span>发布时间:</span>2017-06-15, 14:33:14</p>
+        <p><span>最后更新:</span>2017-06-15, 15:23:21</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/06/14/Hexo搭建个人博客/" title="Hexo搭建个人博客">http://www.wllyt.site/2017/06/14/Hexo搭建个人博客/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.wllyt.site/2017/06/14/Hexo搭建个人博客/　　作者: Long Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/06/15/requestAnimationFrame/" title="requestAnimationFrame">http://www.wllyt.site/2017/06/15/requestAnimationFrame/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.wllyt.site/2017/06/15/requestAnimationFrame/　　作者: Long Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -372,16 +328,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/06/15/requestAnimationFrame/">
-                    requestAnimationFrame
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/06/09/hello-world/">
-                    Hello World
+                <a href="/2017/06/14/Hexo搭建个人博客/">
+                    Hexo搭建个人博客
                 </a>
             </div>
         
@@ -393,7 +343,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地环境搭建"><span class="toc-number">2.</span> <span class="toc-text">本地环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建你的第一篇博客"><span class="toc-number">3.</span> <span class="toc-text">创建你的第一篇博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将博客发布到Github"><span class="toc-number">4.</span> <span class="toc-text">将博客发布到Github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#个性化你的HEXO博客"><span class="toc-number">5.</span> <span class="toc-text">个性化你的HEXO博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">6.</span> <span class="toc-text">参考链接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HEXO"><span class="toc-number">6.0.1.</span> <span class="toc-text">HEXO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HEXO-THEMES"><span class="toc-number">6.0.2.</span> <span class="toc-text">HEXO | THEMES</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Github"><span class="toc-number">6.0.3.</span> <span class="toc-text">Github</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NODE"><span class="toc-number">6.0.4.</span> <span class="toc-text">NODE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#markdown"><span class="toc-number">6.0.5.</span> <span class="toc-text">markdown</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">3.</span> <span class="toc-text">参考链接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MDN-window-requestAnimationFrame"><span class="toc-number">3.0.1.</span> <span class="toc-text">MDN window.requestAnimationFrame</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Paul-Lrish-requestAnimationFrame-for-Smart-Animating"><span class="toc-number">3.0.2.</span> <span class="toc-text">Paul Lrish requestAnimationFrame for Smart Animating</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
@@ -429,7 +379,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Hexo搭建个人博客　| Wanglong's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"requestAnimationFrame　| Wanglong's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -449,15 +399,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/06/15/requestAnimationFrame/" title="上一篇: requestAnimationFrame">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/06/09/hello-world/" title="下一篇: Hello World">
+            <a href="/2017/06/14/Hexo搭建个人博客/" title="下一篇: Hexo搭建个人博客">
                 <i class="fa fa-angle-right"></i>
             </a>
         
