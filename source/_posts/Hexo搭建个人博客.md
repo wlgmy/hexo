@@ -78,6 +78,12 @@ deploy:
   branch: master
 ```
 
+> 安装hexo的git依赖（如果你的deploy是采用git方式的话，否则可以跳过）
+
+```bash
+$ npm install hexo-deployer-git --save
+```
+
 > 发布至Github.io
 
 ```bash
