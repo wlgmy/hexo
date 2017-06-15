@@ -28,6 +28,8 @@ fi
 OPT=$1
 case $OPT in
   deploy|Deploy|d|D)
+  echo "hexo clean"
+  hexo c
   echo "hexo generage"
   hexo g
   echo "hexo deploy"
