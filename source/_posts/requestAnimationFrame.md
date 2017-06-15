@@ -16,7 +16,11 @@ requestID = window.requestAnimationFrame(callback);               // Firefox 23 
 requestID = window.mozRequestAnimationFrame(callback);                // Firefox < 23
 requestID = window.webkitRequestAnimationFrame(callback); // Older versions Chrome/Webkit
 ```
+## 兼容性
+
+
 目前，主要浏览器(Firefox 23 / IE 10 / Chrome / Safari）都支持这个方法 [点击查看兼容性测试](https://caniuse.com/#search=requestAnimationFrame)。对于没有实现requestAnimationFrame方法的浏览器，由于requestAnimationFrame和setTimeout一样采用回调的方式,因此可以在没有实现requestAnimationFrame的浏览器中才用setTimeout作为备胎，下面放上一段由Paul Irish及其他贡献者放在GitHub Gist上的代码片段，用以在浏览器不支持requestAnimationFrame的情况下使用setTimeout作为备胎方案
+
 ```javascript
 // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
@@ -44,7 +48,7 @@ requestID = window.webkitRequestAnimationFrame(callback); // Older versions Chro
 }());
 
 ```
-> 例子
+## 例子
 
 ```javascript
 // useage

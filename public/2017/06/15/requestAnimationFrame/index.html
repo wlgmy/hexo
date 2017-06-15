@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://www.wllyt.site/2017/06/15/requestAnimationFrame/index.html">
 <meta property="og:site_name" content="Wanglong&#39;s Blog">
 <meta property="og:description" content="概述requestAnimationFrame是浏览器用于定时循环操作，类似于setTimeout的一个接口，只不过setTimeout是用户自定义定时时间，而requestAnimationFrame则是利用浏览器的刷新机制，根据浏览器/显示器的刷新频率（60HZ或者75HZ）来执行定时操作。因此这个方法在做逐帧动画的时候非常适用。 语法 注意:如果您想在下一个重绘时为另一个框架设置动画，您的回">
-<meta property="og:updated_time" content="2017-06-15T07:23:21.000Z">
+<meta property="og:updated_time" content="2017-06-15T07:31:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="requestAnimationFrame">
 <meta name="twitter:description" content="概述requestAnimationFrame是浏览器用于定时循环操作，类似于setTimeout的一个接口，只不过setTimeout是用户自定义定时时间，而requestAnimationFrame则是利用浏览器的刷新机制，根据浏览器/显示器的刷新频率（60HZ或者75HZ）来执行定时操作。因此这个方法在做逐帧动画的时候非常适用。 语法 注意:如果您想在下一个重绘时为另一个框架设置动画，您的回">
@@ -136,13 +136,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>菜單</li>
+                        <li>標籤</li>
                         
-                        <li>友情链接</li>
+                        <li>友情鏈接</li>
                         
                         
-                        <li>关于我</li>
+                        <li>關於我</li>
                         
                     </ul>
                 </div>
@@ -254,7 +254,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
 </nav>
       <div class="body-wrap"><article id="post-requestAnimationFrame" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -297,11 +297,9 @@
 <p>注意:<br>如果您想在下一个重绘时为另一个框架设置动画，您的回调例程必须调用 requestAnimationFrame()。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">requestID = <span class="built_in">window</span>.requestAnimationFrame(callback);               <span class="comment">// Firefox 23 / IE10 / Chrome / Safari 7 (incl. iOS)</span></div><div class="line">requestID = <span class="built_in">window</span>.mozRequestAnimationFrame(callback);                <span class="comment">// Firefox &lt; 23</span></div><div class="line">requestID = <span class="built_in">window</span>.webkitRequestAnimationFrame(callback); <span class="comment">// Older versions Chrome/Webkit</span></div></pre></td></tr></table></figure>
-<p>目前，主要浏览器(Firefox 23 / IE 10 / Chrome / Safari）都支持这个方法 <a href="https://caniuse.com/#search=requestAnimationFrame" target="_blank" rel="external">点击查看兼容性测试</a>。对于没有实现requestAnimationFrame方法的浏览器，由于requestAnimationFrame和setTimeout一样采用回调的方式,因此可以在没有实现requestAnimationFrame的浏览器中才用setTimeout作为备胎，下面放上一段由Paul Irish及其他贡献者放在GitHub Gist上的代码片段，用以在浏览器不支持requestAnimationFrame的情况下使用setTimeout作为备胎方案<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// http://paulirish.com/2011/requestanimationframe-for-smart-animating/</span></div><div class="line"><span class="comment">// http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating</span></div><div class="line"><span class="comment">// requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel</span></div><div class="line"><span class="comment">// MIT license</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> lastTime = <span class="number">0</span>;</div><div class="line">    <span class="keyword">var</span> vendors = [<span class="string">'ms'</span>, <span class="string">'moz'</span>, <span class="string">'webkit'</span>, <span class="string">'o'</span>];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> x = <span class="number">0</span>; x &lt; vendors.length &amp;&amp; !<span class="built_in">window</span>.requestAnimationFrame; ++x) &#123;</div><div class="line">        <span class="built_in">window</span>.requestAnimationFrame = <span class="built_in">window</span>[vendors[x] + <span class="string">'RequestAnimationFrame'</span>];</div><div class="line">        <span class="built_in">window</span>.cancelAnimationFrame = <span class="built_in">window</span>[vendors[x] + <span class="string">'CancelAnimationFrame'</span>] || <span class="built_in">window</span>[vendors[x] + <span class="string">'CancelRequestAnimationFrame'</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.requestAnimationFrame) <span class="built_in">window</span>.requestAnimationFrame = <span class="function"><span class="keyword">function</span>(<span class="params">callback, element</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> currTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</div><div class="line">        <span class="keyword">var</span> timeToCall = <span class="built_in">Math</span>.max(<span class="number">0</span>, <span class="number">16</span> - (currTime - lastTime));</div><div class="line">        <span class="keyword">var</span> id = <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            callback(currTime + timeToCall);</div><div class="line">        &#125;, timeToCall);</div><div class="line">        lastTime = currTime + timeToCall;</div><div class="line">        <span class="keyword">return</span> id;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.cancelAnimationFrame) <span class="built_in">window</span>.cancelAnimationFrame = <span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">        clearTimeout(id);</div><div class="line">    &#125;;</div><div class="line">&#125;());</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>例子</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// useage</span></div><div class="line"><span class="keyword">var</span> start = <span class="literal">null</span>;</div><div class="line"><span class="keyword">var</span> d = <span class="built_in">document</span>.getElementById(<span class="string">'SomeElementYouWantToAnimate'</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">timestamp</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (start === <span class="literal">null</span>) start = timestamp;</div><div class="line">  <span class="keyword">var</span> progress = timestamp - start;</div><div class="line">  d.style.left = <span class="built_in">Math</span>.min(progress/<span class="number">10</span>, <span class="number">200</span>) + <span class="string">"px"</span>;</div><div class="line">  <span class="keyword">if</span> (progress &lt; <span class="number">2000</span>) &#123;</div><div class="line">    requestAnimationFrame(step);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">requestAnimationFrame(step);</div></pre></td></tr></table></figure>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p>目前，主要浏览器(Firefox 23 / IE 10 / Chrome / Safari）都支持这个方法 <a href="https://caniuse.com/#search=requestAnimationFrame" target="_blank" rel="external">点击查看兼容性测试</a>。对于没有实现requestAnimationFrame方法的浏览器，由于requestAnimationFrame和setTimeout一样采用回调的方式,因此可以在没有实现requestAnimationFrame的浏览器中才用setTimeout作为备胎，下面放上一段由Paul Irish及其他贡献者放在GitHub Gist上的代码片段，用以在浏览器不支持requestAnimationFrame的情况下使用setTimeout作为备胎方案</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// http://paulirish.com/2011/requestanimationframe-for-smart-animating/</span></div><div class="line"><span class="comment">// http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating</span></div><div class="line"><span class="comment">// requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel</span></div><div class="line"><span class="comment">// MIT license</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> lastTime = <span class="number">0</span>;</div><div class="line">    <span class="keyword">var</span> vendors = [<span class="string">'ms'</span>, <span class="string">'moz'</span>, <span class="string">'webkit'</span>, <span class="string">'o'</span>];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> x = <span class="number">0</span>; x &lt; vendors.length &amp;&amp; !<span class="built_in">window</span>.requestAnimationFrame; ++x) &#123;</div><div class="line">        <span class="built_in">window</span>.requestAnimationFrame = <span class="built_in">window</span>[vendors[x] + <span class="string">'RequestAnimationFrame'</span>];</div><div class="line">        <span class="built_in">window</span>.cancelAnimationFrame = <span class="built_in">window</span>[vendors[x] + <span class="string">'CancelAnimationFrame'</span>] || <span class="built_in">window</span>[vendors[x] + <span class="string">'CancelRequestAnimationFrame'</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.requestAnimationFrame) <span class="built_in">window</span>.requestAnimationFrame = <span class="function"><span class="keyword">function</span>(<span class="params">callback, element</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> currTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</div><div class="line">        <span class="keyword">var</span> timeToCall = <span class="built_in">Math</span>.max(<span class="number">0</span>, <span class="number">16</span> - (currTime - lastTime));</div><div class="line">        <span class="keyword">var</span> id = <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            callback(currTime + timeToCall);</div><div class="line">        &#125;, timeToCall);</div><div class="line">        lastTime = currTime + timeToCall;</div><div class="line">        <span class="keyword">return</span> id;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.cancelAnimationFrame) <span class="built_in">window</span>.cancelAnimationFrame = <span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">        clearTimeout(id);</div><div class="line">    &#125;;</div><div class="line">&#125;());</div></pre></td></tr></table></figure>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// useage</span></div><div class="line"><span class="keyword">var</span> start = <span class="literal">null</span>;</div><div class="line"><span class="keyword">var</span> d = <span class="built_in">document</span>.getElementById(<span class="string">'SomeElementYouWantToAnimate'</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">timestamp</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (start === <span class="literal">null</span>) start = timestamp;</div><div class="line">  <span class="keyword">var</span> progress = timestamp - start;</div><div class="line">  d.style.left = <span class="built_in">Math</span>.min(progress/<span class="number">10</span>, <span class="number">200</span>) + <span class="string">"px"</span>;</div><div class="line">  <span class="keyword">if</span> (progress &lt; <span class="number">2000</span>) &#123;</div><div class="line">    requestAnimationFrame(step);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">requestAnimationFrame(step);</div></pre></td></tr></table></figure>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><h4 id="MDN-window-requestAnimationFrame"><a href="#MDN-window-requestAnimationFrame" class="headerlink" title="MDN window.requestAnimationFrame"></a>MDN <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame" target="_blank" rel="external">window.requestAnimationFrame</a></h4><h4 id="Paul-Lrish-requestAnimationFrame-for-Smart-Animating"><a href="#Paul-Lrish-requestAnimationFrame-for-Smart-Animating" class="headerlink" title="Paul Lrish requestAnimationFrame for Smart Animating"></a>Paul Lrish <a href="https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/" target="_blank" rel="external">requestAnimationFrame for Smart Animating</a></h4>
       
     </div>
@@ -310,17 +308,17 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/06/15/requestAnimationFrame/">requestAnimationFrame</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">Long Wang</a></p>
-        <p><span>发布时间:</span>2017-06-15, 14:33:14</p>
-        <p><span>最后更新:</span>2017-06-15, 15:23:21</p>
+        <p><span>本文標題:</span><a href="/2017/06/15/requestAnimationFrame/">requestAnimationFrame</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主頁">Long Wang</a></p>
+        <p><span>發布時間:</span>2017-06-15, 14:33:14</p>
+        <p><span>最後更新:</span>2017-06-15, 15:31:34</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/06/15/requestAnimationFrame/" title="requestAnimationFrame">http://www.wllyt.site/2017/06/15/requestAnimationFrame/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.wllyt.site/2017/06/15/requestAnimationFrame/　　作者: Long Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始鏈接:</span><a class="post-url" href="/2017/06/15/requestAnimationFrame/" title="requestAnimationFrame">http://www.wllyt.site/2017/06/15/requestAnimationFrame/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.wllyt.site/2017/06/15/requestAnimationFrame/　　作者: Long Wang" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+            <span>許可協議:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"姓名標示-非商業性-相同方式分享 4.0 國際"</a> 轉載請保留原文鏈接及作者。
         </p>
     </div>
 
@@ -341,9 +339,9 @@
 </article>
 
     <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
+        <strong class="toc-title">文章目錄</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">3.</span> <span class="toc-text">参考链接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MDN-window-requestAnimationFrame"><span class="toc-number">3.0.1.</span> <span class="toc-text">MDN window.requestAnimationFrame</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Paul-Lrish-requestAnimationFrame-for-Smart-Animating"><span class="toc-number">3.0.2.</span> <span class="toc-text">Paul Lrish requestAnimationFrame for Smart Animating</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#兼容性"><span class="toc-number">3.</span> <span class="toc-text">兼容性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子"><span class="toc-number">4.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">5.</span> <span class="toc-text">参考链接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MDN-window-requestAnimationFrame"><span class="toc-number">5.0.1.</span> <span class="toc-text">MDN window.requestAnimationFrame</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Paul-Lrish-requestAnimationFrame-for-Smart-Animating"><span class="toc-number">5.0.2.</span> <span class="toc-text">Paul Lrish requestAnimationFrame for Smart Animating</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
@@ -357,10 +355,10 @@
         }
     </style>
 
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+    <input type="button" id="tocButton" value="隱藏目錄"  title="點擊按鈕隱藏或者顯示文章目錄">
 
     <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+        yiliaConfig.toc = ["隱藏目錄", "顯示目錄", !!"false"];
     </script>
 
 
@@ -399,7 +397,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/" title="回到主頁"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -428,14 +426,14 @@
                 2016-2017 Long Wang
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、簡潔且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="簡而不減 Hexo 雙欄博客主題  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到訪數"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -444,7 +442,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本頁閱讀量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -477,9 +475,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
