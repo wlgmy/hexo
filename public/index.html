@@ -254,6 +254,187 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-常用mysql命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/28/常用mysql命令/" class="article-date">
+      <time datetime="2017-06-28T03:12:29.000Z" itemprop="datePublished">2017-06-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/28/常用mysql命令/">常用mysql命令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>登录</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u username -h hostname --port port -p</div></pre></td></tr></table></figure>
+<blockquote>
+<p>查看数据库</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SHOW DATABASES;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>创建数据库</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE database;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>选择目标数据库</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">USE database;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>查看数据表和新建数据表</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 查看数据表</span></div><div class="line">SHOW TABLES;</div><div class="line"><span class="comment"># 新建数据表</span></div><div class="line">CREATE TABLE mytable (name VARCHAR(20), sec CHAR(1));</div></pre></td></tr></table></figure>
+<h1 id="显示表结构"><a href="#显示表结构" class="headerlink" title="显示表结构"></a>显示表结构</h1><p>DESCRIBE mytable;<br>```</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-MariaDB" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/27/MariaDB/" class="article-date">
+      <time datetime="2017-06-27T09:34:40.000Z" itemprop="datePublished">2017-06-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/27/MariaDB/">MariaDB</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>本文基于centos7.3版本简单介绍安装、配置、使用MariaDB数据库。MariaDB是一个增强的MySql替代品，由于MySql已被sun公司收购，因此在阿里云上的centos服务器标配MariaDB数据库。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install mariadb mariadb-server</div></pre></td></tr></table></figure>
+<h2 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a>简单配置</h2><blockquote>
+<p>启动</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl start mariadb</div></pre></td></tr></table></figure>
+<blockquote>
+<p>开机启动</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl <span class="built_in">enable</span> mariadb</div></pre></td></tr></table></figure>
+<blockquote>
+<p>一些简单的相关配置</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_secure_installation</div></pre></td></tr></table></figure>
+<p>进入设置，首先是设置密码，初始密码为空，直接回车跳过即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 是否设置root用户密码</span></div><div class="line">Set root password? [Y/n]</div><div class="line">New password:</div><div class="line">Re-enter new password:</div><div class="line"></div><div class="line"><span class="comment"># 是否删除匿名用户</span></div><div class="line">Remove anonymous users? [Y/n]</div><div class="line"></div><div class="line"><span class="comment">#是否禁止root远程登录</span></div><div class="line">Disallow root login remotely? [Y/n]</div><div class="line"></div><div class="line"><span class="comment"># 是否删除test数据库</span></div><div class="line">Remove <span class="built_in">test</span> database and access to it? [Y/n]</div><div class="line"></div><div class="line"><span class="comment"># 是否重新加载权限表</span></div><div class="line">Reload privilege tables now? [Y/n]</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>登录</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u`root` -p`password`</div></pre></td></tr></table></figure>
+<blockquote>
+<p>设置字符集<br>修改 /etc/my.cnf文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/my.cnf</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>在[mysqld]标签下添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">init_connect=<span class="string">'SET collation_connection = utf8_unicode_ci'</span></div><div class="line">init_connect=<span class="string">'SET NAMES utf8'</span></div><div class="line">character-set-server=utf8</div><div class="line">collation-server=utf8_unicode_ci</div><div class="line">skip-character-set-client-handshake</div></pre></td></tr></table></figure></p>
+<p>修改/etc/my.cnf.d/client.cnf文件<br>在[client]中添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">default-character-set=utf8</div></pre></td></tr></table></figure></p>
+<p>修改/etc/my.cnf.d/mysql-clients.cnf文件<br>在[mysql]中添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">default-character-set=utf8</div></pre></td></tr></table></figure></p>
+<p>配置结束，重启MariaDB并检查字符集<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#重启</span></div><div class="line">systemctl restart mariadb</div><div class="line"><span class="comment">#登录</span></div><div class="line">mysql -u`root` -p`password`</div><div class="line"><span class="comment">#查看字符集</span></div><div class="line">show variables like <span class="string">"%character%"</span>;show variables like <span class="string">"%collation%"</span>;</div></pre></td></tr></table></figure></p>
+<h2 id="用户和权限相关"><a href="#用户和权限相关" class="headerlink" title="用户和权限相关"></a>用户和权限相关</h2><blockquote>
+<p>创建用户</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">create user username@localhost identified by <span class="string">'password'</span>;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>直接创建用户并授权</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant all on *.* to username@localhost indentified by <span class="string">'password'</span>;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>授予外网登陆权限</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant all privileges on *.* to username@<span class="string">'%'</span> identified by <span class="string">'password'</span>;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>授予权限并且可以授权</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant all privileges on *.* to username@<span class="string">'hostname'</span> identified by <span class="string">'password'</span> with grant option;</div></pre></td></tr></table></figure>
+<h2 id="mac客户端测试远程连接"><a href="#mac客户端测试远程连接" class="headerlink" title="mac客户端测试远程连接"></a>mac客户端测试远程连接</h2><blockquote>
+<p>安装MariaDB</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install MariaDB</div></pre></td></tr></table></figure>
+<blockquote>
+<p>测试连接</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u username -h hostname --port port -p</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-requestAnimationFrame" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
