@@ -34,5 +34,6 @@ SHOW TABLES;
 CREATE TABLE mytable (name VARCHAR(20), sec CHAR(1));
 ```
 # 显示表结构
+```bash
 DESCRIBE mytable;
 ```
