@@ -283,10 +283,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>本人主要针对ios8及8以上的iphone中retina屏如何实现一设备像素边框，正常1px的边框在devicePixelRatio=2的retina屏下（iphone5/5s/6/6s/7/7s）下会显示成2px，在devicePixelRatio=3的retina屏下（iphone6sp/7sp）下则会显示成3px，相信很多UI妹纸是不会容忍这么粗的变宽的。</p>
+        <p>本人主要针对ios8及8以上的iphone中retina屏如何实现一设备像素边框，正常1px的边框在devicePixelRatio=2的retina屏下（iphone5/5s/5c/se/6/6s/7）下会显示成2px，在devicePixelRatio=3的retina屏下（iphone6p/6sp/7p）下则会显示成3px，相信很多UI妹纸是不会容忍这么粗的边框的。</p>
 <p>虽然在ios8及8以上已经支持0.5px，但是在ios8一下以及安卓机上，0.5px会直接被显示为0px；因此需要用别的方法来实现1设备像素。</p>
-<p>##javascript方式，针对ios8+</p>
-<blockquote>
+<h2 id="javascript方式，针对ios8"><a href="#javascript方式，针对ios8" class="headerlink" title="javascript方式，针对ios8+"></a>javascript方式，针对ios8+</h2><blockquote>
 <p>方案一：用JS判断UA，是否是ios8+，是的话则输入出类名hairlines，为了防止重绘，可以将一下代码加入到head里</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="regexp">/iP(hone|od|ad)/</span>.test(navigator.userAgent)) &#123;</div><div class="line">	<span class="keyword">var</span> v = (navigator.appVersion).match(<span class="regexp">/OS (\d+)_(\d+)_?(\d+)?/</span>),</div><div class="line">		version = <span class="built_in">parseInt</span>(v[<span class="number">1</span>], <span class="number">10</span>);</div><div class="line">	<span class="keyword">if</span>(version &gt;= <span class="number">8</span>)&#123;</div><div class="line">		<span class="built_in">document</span>.documentElement.classList.add(<span class="string">'hairlines'</span>)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
