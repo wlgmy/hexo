@@ -140,13 +140,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -250,9 +250,97 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-移动设备实现一设备像素边框" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/06/移动设备实现一设备像素边框/" class="article-date">
+      <time datetime="2017-07-06T06:21:19.000Z" itemprop="datePublished">2017-07-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/06/移动设备实现一设备像素边框/">移动设备实现一设备像素边框</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>本人主要针对ios8及8以上的iphone中retina屏如何实现一设备像素边框，正常1px的边框在devicePixelRatio=2的retina屏下（iphone5/5s/6/6s/7/7s）下会显示成2px，在devicePixelRatio=3的retina屏下（iphone6sp/7sp）下则会显示成3px，相信很多UI妹纸是不会容忍这么粗的变宽的。</p>
+<p>虽然在ios8及8以上已经支持0.5px，但是在ios8一下以及安卓机上，0.5px会直接被显示为0px；因此需要用别的方法来实现1设备像素。</p>
+<p>##javascript方式，针对ios8+</p>
+<blockquote>
+<p>方案一：用JS判断UA，是否是ios8+，是的话则输入出类名hairlines，为了防止重绘，可以将一下代码加入到head里</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="regexp">/iP(hone|od|ad)/</span>.test(navigator.userAgent)) &#123;</div><div class="line">	<span class="keyword">var</span> v = (navigator.appVersion).match(<span class="regexp">/OS (\d+)_(\d+)_?(\d+)?/</span>),</div><div class="line">		version = <span class="built_in">parseInt</span>(v[<span class="number">1</span>], <span class="number">10</span>);</div><div class="line">	<span class="keyword">if</span>(version &gt;= <span class="number">8</span>)&#123;</div><div class="line">		<span class="built_in">document</span>.documentElement.classList.add(<span class="string">'hairlines'</span>)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>方案二：js判断是否支持0.5px边框</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.devicePixelRatio &amp;&amp; devicePixelRatio &gt;= <span class="number">2</span>) &#123;</div><div class="line">	<span class="keyword">var</span> testElem = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line">	testElem.style.border = <span class="string">'.5px solid #000'</span>;</div><div class="line">	<span class="built_in">document</span>.body.appendChild(testElem);</div><div class="line">	<span class="comment">//当div存在</span></div><div class="line">	<span class="keyword">if</span> (testElem.offsetHeight == <span class="number">1</span>)&#123;</div><div class="line">	  <span class="built_in">document</span>.querySelector(<span class="string">'html'</span>).classList.add(<span class="string">'hairlines'</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//添加完hairlines类名后，则删除div</span></div><div class="line">	<span class="built_in">document</span>.body.removeChild(testElem);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="css方式，可支持大部分机型"><a href="#css方式，可支持大部分机型" class="headerlink" title="css方式，可支持大部分机型"></a>css方式，可支持大部分机型</h2><blockquote>
+<p>方案一：viewport+rem</p>
+</blockquote>
+<p>此方案适用于新项目，旧项目改动较大，不建议使用<br>当devicePixelRatio=2时<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>当devicePixelRatio=3时<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"initial-scale=0.3333333333333333, maximum-scale=0.3333333333333333, minimum-scale=0.3333333333333333, user-scalable=no"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>方案二：通过scale缩放</p>
+</blockquote>
+<p>此方案不能实现圆角，而且在实现四条边框时比较麻烦</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">	<span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">  <span class="attribute">content</span>:<span class="string">""</span>;</div><div class="line">	<span class="attribute">position</span>: absolute;</div><div class="line">	<span class="attribute">bottom</span>:<span class="number">0px</span>;</div><div class="line">	<span class="attribute">left</span>:<span class="number">0px</span>;</div><div class="line">	<span class="attribute">right</span>:<span class="number">0px</span>;</div><div class="line">	<span class="attribute">border-bottom</span>:<span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">	<span class="attribute">-webkit-transform</span>:<span class="built_in">scaleY</span>(.5);</div><div class="line">	<span class="attribute">-webkit-transform-origin</span>:<span class="number">0</span> <span class="number">0</span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>方案三：box-shadow</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">-webkit-box-shadow</span><span class="selector-pseudo">:0</span> 1<span class="selector-tag">px</span> 1<span class="selector-tag">px</span> <span class="selector-tag">-1px</span> <span class="selector-tag">rgba</span>(0, 0, 0, 0<span class="selector-class">.5</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>方案四：background-image</p>
+</blockquote>
+<p>通过css实现1px的image，然后50%透明。但是圆角难处理<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.border</span> &#123;</div><div class="line">	<span class="attribute">background-image</span>:<span class="built_in">linear-gradient</span>(180deg, red, red 50%, transparent 50%),</div><div class="line">	<span class="built_in">linear-gradient</span>(270deg, red, red 50%, transparent 50%),</div><div class="line">	<span class="built_in">linear-gradient</span>(0deg, red, red 50%, transparent 50%),</div><div class="line">	<span class="built_in">linear-gradient</span>(90deg, red, red 50%, transparent 50%);</div><div class="line">	<span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">1px</span>,<span class="number">1px</span> <span class="number">100%</span> ,<span class="number">100%</span> <span class="number">1px</span>, <span class="number">1px</span> <span class="number">100%</span>;</div><div class="line">	<span class="attribute">background-repeat</span>: no-repeat;</div><div class="line">	<span class="attribute">background-position</span>: top, right top,  bottom, left top;</div><div class="line">	<span class="attribute">padding</span>: <span class="number">10px</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>方案五：用图片</p>
+</blockquote>
+<p>最简单粗暴的方式，但是如果出现图片缩放或者放大的情况可能会导致图片模糊</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-常用mysql命令" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -685,14 +773,14 @@
                 2016-2017 Long Wang
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -701,7 +789,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -734,9 +822,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window

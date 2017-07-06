@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="登录  1mysql -u username -h hostname --port port -p  查看数据库  1SHOW DATABASES;  创建数据库  1CREATE DATABASE database;  选择目标数据库  1USE database;  查看数据表和新建数据表  1234# 查看数据表SHOW TABLES;# 新建数据表CREATE TABLE mytable">
+<meta name="description" content="本人主要针对ios8及8以上的iphone中retina屏如何实现一设备像素边框，正常1px的边框在devicePixelRatio=2的retina屏下（iphone5/5s/6/6s/7/7s）下会显示成2px，在devicePixelRatio=3的retina屏下（iphone6sp/7sp）下则会显示成3px，相信很多UI妹纸是不会容忍这么粗的变宽的。 虽然在ios8及8以上已经支持0.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用mysql命令">
-<meta property="og:url" content="http://www.wllyt.site/2017/06/28/常用mysql命令/index.html">
+<meta property="og:title" content="移动设备实现一设备像素边框">
+<meta property="og:url" content="http://www.wllyt.site/2017/07/06/移动设备实现一设备像素边框/index.html">
 <meta property="og:site_name" content="Wanglong&#39;s Blog">
-<meta property="og:description" content="登录  1mysql -u username -h hostname --port port -p  查看数据库  1SHOW DATABASES;  创建数据库  1CREATE DATABASE database;  选择目标数据库  1USE database;  查看数据表和新建数据表  1234# 查看数据表SHOW TABLES;# 新建数据表CREATE TABLE mytable">
-<meta property="og:updated_time" content="2017-06-29T02:02:07.000Z">
+<meta property="og:description" content="本人主要针对ios8及8以上的iphone中retina屏如何实现一设备像素边框，正常1px的边框在devicePixelRatio=2的retina屏下（iphone5/5s/6/6s/7/7s）下会显示成2px，在devicePixelRatio=3的retina屏下（iphone6sp/7sp）下则会显示成3px，相信很多UI妹纸是不会容忍这么粗的变宽的。 虽然在ios8及8以上已经支持0.">
+<meta property="og:updated_time" content="2017-07-06T06:58:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用mysql命令">
-<meta name="twitter:description" content="登录  1mysql -u username -h hostname --port port -p  查看数据库  1SHOW DATABASES;  创建数据库  1CREATE DATABASE database;  选择目标数据库  1USE database;  查看数据表和新建数据表  1234# 查看数据表SHOW TABLES;# 新建数据表CREATE TABLE mytable">
+<meta name="twitter:title" content="移动设备实现一设备像素边框">
+<meta name="twitter:description" content="本人主要针对ios8及8以上的iphone中retina屏如何实现一设备像素边框，正常1px的边框在devicePixelRatio=2的retina屏下（iphone5/5s/6/6s/7/7s）下会显示成2px，在devicePixelRatio=3的retina屏下（iphone6sp/7sp）下则会显示成3px，相信很多UI妹纸是不会容忍这么粗的变宽的。 虽然在ios8及8以上已经支持0.">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>常用mysql命令 | Wanglong&#39;s Blog</title>
+<title>移动设备实现一设备像素边框 | Wanglong&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -248,11 +248,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-常用mysql命令" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-移动设备实现一设备像素边框" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/06/28/常用mysql命令/" class="article-date">
-      <time datetime="2017-06-28T03:12:29.000Z" itemprop="datePublished">2017-06-28</time>
+      <a href="/2017/07/06/移动设备实现一设备像素边框/" class="article-date">
+      <time datetime="2017-07-06T06:21:19.000Z" itemprop="datePublished">2017-07-06</time>
 </a>
 
 
@@ -267,7 +267,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      常用mysql命令
+      移动设备实现一设备像素边框
     </h1>
   
 
@@ -284,27 +284,39 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <blockquote>
-<p>登录</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u username -h hostname --port port -p</div></pre></td></tr></table></figure>
+        <p>本人主要针对ios8及8以上的iphone中retina屏如何实现一设备像素边框，正常1px的边框在devicePixelRatio=2的retina屏下（iphone5/5s/6/6s/7/7s）下会显示成2px，在devicePixelRatio=3的retina屏下（iphone6sp/7sp）下则会显示成3px，相信很多UI妹纸是不会容忍这么粗的变宽的。</p>
+<p>虽然在ios8及8以上已经支持0.5px，但是在ios8一下以及安卓机上，0.5px会直接被显示为0px；因此需要用别的方法来实现1设备像素。</p>
+<p>##javascript方式，针对ios8+</p>
 <blockquote>
-<p>查看数据库</p>
+<p>方案一：用JS判断UA，是否是ios8+，是的话则输入出类名hairlines，为了防止重绘，可以将一下代码加入到head里</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SHOW DATABASES;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="regexp">/iP(hone|od|ad)/</span>.test(navigator.userAgent)) &#123;</div><div class="line">	<span class="keyword">var</span> v = (navigator.appVersion).match(<span class="regexp">/OS (\d+)_(\d+)_?(\d+)?/</span>),</div><div class="line">		version = <span class="built_in">parseInt</span>(v[<span class="number">1</span>], <span class="number">10</span>);</div><div class="line">	<span class="keyword">if</span>(version &gt;= <span class="number">8</span>)&#123;</div><div class="line">		<span class="built_in">document</span>.documentElement.classList.add(<span class="string">'hairlines'</span>)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>创建数据库</p>
+<p>方案二：js判断是否支持0.5px边框</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE database;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.devicePixelRatio &amp;&amp; devicePixelRatio &gt;= <span class="number">2</span>) &#123;</div><div class="line">	<span class="keyword">var</span> testElem = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line">	testElem.style.border = <span class="string">'.5px solid #000'</span>;</div><div class="line">	<span class="built_in">document</span>.body.appendChild(testElem);</div><div class="line">	<span class="comment">//当div存在</span></div><div class="line">	<span class="keyword">if</span> (testElem.offsetHeight == <span class="number">1</span>)&#123;</div><div class="line">	  <span class="built_in">document</span>.querySelector(<span class="string">'html'</span>).classList.add(<span class="string">'hairlines'</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//添加完hairlines类名后，则删除div</span></div><div class="line">	<span class="built_in">document</span>.body.removeChild(testElem);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="css方式，可支持大部分机型"><a href="#css方式，可支持大部分机型" class="headerlink" title="css方式，可支持大部分机型"></a>css方式，可支持大部分机型</h2><blockquote>
+<p>方案一：viewport+rem</p>
+</blockquote>
+<p>此方案适用于新项目，旧项目改动较大，不建议使用<br>当devicePixelRatio=2时<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>当devicePixelRatio=3时<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"initial-scale=0.3333333333333333, maximum-scale=0.3333333333333333, minimum-scale=0.3333333333333333, user-scalable=no"</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>选择目标数据库</p>
+<p>方案二：通过scale缩放</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">USE database;</div></pre></td></tr></table></figure>
+<p>此方案不能实现圆角，而且在实现四条边框时比较麻烦</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">	<span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">  <span class="attribute">content</span>:<span class="string">""</span>;</div><div class="line">	<span class="attribute">position</span>: absolute;</div><div class="line">	<span class="attribute">bottom</span>:<span class="number">0px</span>;</div><div class="line">	<span class="attribute">left</span>:<span class="number">0px</span>;</div><div class="line">	<span class="attribute">right</span>:<span class="number">0px</span>;</div><div class="line">	<span class="attribute">border-bottom</span>:<span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">	<span class="attribute">-webkit-transform</span>:<span class="built_in">scaleY</span>(.5);</div><div class="line">	<span class="attribute">-webkit-transform-origin</span>:<span class="number">0</span> <span class="number">0</span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>查看数据表和新建数据表</p>
+<p>方案三：box-shadow</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 查看数据表</span></div><div class="line">SHOW TABLES;</div><div class="line"><span class="comment"># 新建数据表</span></div><div class="line">CREATE TABLE mytable (name VARCHAR(20), sec CHAR(1));</div></pre></td></tr></table></figure>
-<h1 id="显示表结构"><a href="#显示表结构" class="headerlink" title="显示表结构"></a>显示表结构</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DESCRIBE mytable;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">-webkit-box-shadow</span><span class="selector-pseudo">:0</span> 1<span class="selector-tag">px</span> 1<span class="selector-tag">px</span> <span class="selector-tag">-1px</span> <span class="selector-tag">rgba</span>(0, 0, 0, 0<span class="selector-class">.5</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>方案四：background-image</p>
+</blockquote>
+<p>通过css实现1px的image，然后50%透明。但是圆角难处理<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.border</span> &#123;</div><div class="line">	<span class="attribute">background-image</span>:<span class="built_in">linear-gradient</span>(180deg, red, red 50%, transparent 50%),</div><div class="line">	<span class="built_in">linear-gradient</span>(270deg, red, red 50%, transparent 50%),</div><div class="line">	<span class="built_in">linear-gradient</span>(0deg, red, red 50%, transparent 50%),</div><div class="line">	<span class="built_in">linear-gradient</span>(90deg, red, red 50%, transparent 50%);</div><div class="line">	<span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">1px</span>,<span class="number">1px</span> <span class="number">100%</span> ,<span class="number">100%</span> <span class="number">1px</span>, <span class="number">1px</span> <span class="number">100%</span>;</div><div class="line">	<span class="attribute">background-repeat</span>: no-repeat;</div><div class="line">	<span class="attribute">background-position</span>: top, right top,  bottom, left top;</div><div class="line">	<span class="attribute">padding</span>: <span class="number">10px</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>方案五：用图片</p>
+</blockquote>
+<p>最简单粗暴的方式，但是如果出现图片缩放或者放大的情况可能会导致图片模糊</p>
 
       
     </div>
@@ -313,13 +325,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/06/28/常用mysql命令/">常用mysql命令</a></p>
+        <p><span>本文标题:</span><a href="/2017/07/06/移动设备实现一设备像素边框/">移动设备实现一设备像素边框</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Long Wang</a></p>
-        <p><span>发布时间:</span>2017-06-28, 11:12:29</p>
-        <p><span>最后更新:</span>2017-06-29, 10:02:07</p>
+        <p><span>发布时间:</span>2017-07-06, 14:21:19</p>
+        <p><span>最后更新:</span>2017-07-06, 14:58:49</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/06/28/常用mysql命令/" title="常用mysql命令">http://www.wllyt.site/2017/06/28/常用mysql命令/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.wllyt.site/2017/06/28/常用mysql命令/　　作者: Long Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/06/移动设备实现一设备像素边框/" title="移动设备实现一设备像素边框">http://www.wllyt.site/2017/07/06/移动设备实现一设备像素边框/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.wllyt.site/2017/07/06/移动设备实现一设备像素边框/　　作者: Long Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -331,16 +343,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/07/06/移动设备实现一设备像素边框/">
-                    移动设备实现一设备像素边框
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/06/27/MariaDB/">
-                    MariaDB
+                <a href="/2017/06/28/常用mysql命令/">
+                    常用mysql命令
                 </a>
             </div>
         
@@ -352,7 +358,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#显示表结构"><span class="toc-number">1.</span> <span class="toc-text">显示表结构</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#css方式，可支持大部分机型"><span class="toc-number">1.</span> <span class="toc-text">css方式，可支持大部分机型</span></a></li></ol>
         
     </div>
     <style>
@@ -388,7 +394,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"常用mysql命令　| Wanglong's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"移动设备实现一设备像素边框　| Wanglong's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -408,15 +414,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/07/06/移动设备实现一设备像素边框/" title="上一篇: 移动设备实现一设备像素边框">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/06/27/MariaDB/" title="下一篇: MariaDB">
+            <a href="/2017/06/28/常用mysql命令/" title="下一篇: 常用mysql命令">
                 <i class="fa fa-angle-right"></i>
             </a>
         
